@@ -1,0 +1,42 @@
+" Vim syntax file
+" Language: pseudoglossa
+" Maintainer: Christos Tsanikidis
+" Latest Revision: 2016-1-27
+
+if exists("b:current_syntax")
+  finish
+endif
+
+" Operators
+syn keyword operators <= <- + - / * mod div
+
+" Keywords
+syn keyword basic ΤΕΛΟΣ_ΕΠΑΝΑΛΗΨΗΣ ΟΣΟ ΓΙΑ ΔΙΑΒΑΣΕ ΕΠΑΝΑΛΑΒΕ ΜΕΧΡΙΣ_ΟΤΟΥ ΔΕΔΟΜΕΝΑ ΕΚΤΥΠΩΣΕ ΑΠΟΤΕΛΕΣΜΑΤΑ ΤΕΛΟΣ_ΑΝ ΑΠΟ ΜΕΧΡΙ ΜΕ_ΒΗΜΑ ΑΝΤΙΜΕΤΑΘΕΣΕ ΚΑΘΑΡΙΣΕ ΚΑΛΕΣΕ ΕΜΦΑΝΙΣΕ ΓΡΑΨΕ
+
+" Starting Keyword Followed by Name of Program
+syn match title_str '\w\+'
+syn keyword title ΑΛΓΟΡΙΘΜΟΣ ΤΕΛΟΣ nextgroup=title_str skipwhite
+
+" Comments & TODO 
+syn match comments "!.*$" contains=todo
+syn keyword todo contained TODO FIXME XXX NOTE ΔΙΟΡΘΩΣΗ ΝΑ_ΦΤΙΑΞΩ 
+
+" String Literal
+syn region string start='"' end='"'
+" Expression 
+syn match maths "\d"
+
+let b:current_syntax = "psgl"
+
+hi def link basic Statement
+hi def link operators Statements
+"hi def link title Statement
+
+hi def link comments Comment
+hi def link todo Todo
+
+hi def link string PreProc
+hi def link maths Constant
+"hi def link title_str Constant
+
+

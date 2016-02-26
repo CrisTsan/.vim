@@ -1,0 +1,38 @@
+snippet htmlfun "An php HTML function" b
+<?php function ${1:NAME}(${2:arguments}) { ?>
+	${3:${VISUAL:HTML CONTENT HERE}}
+<?php } ?>
+$0
+endsnippet
+
+snippet htmlif "An php HTML if statement" b
+<?php if ($2) { ?>
+	${3:${VISUAL:test}}
+<?php } ?>
+$0
+endsnippet
+
+snippet htmlfor "An php HTML For Loop" b
+<?php for ($1;$2;$3){ ?>
+	${4:${VISUAL:HTML CONTENT HERE}}
+<?php } ?>
+$0
+endsnippet
+
+snippet htmlforeach "An php HTML For Loop" b
+<?php foreach ($array as $item): ?>
+	${4:${VISUAL:HTML CONTENT HERE}}
+<?php endforeach; ?>
+$0
+endsnippet
+
+snippet htmlecho "An PHP HTML echo" b
+<?php echo $1; ?>
+$0
+endsnippet
+
+snippet php "enclose selected text in PHP tags" b
+<?php 
+	${1:${VISUAL}}
+?>
+endsnippet

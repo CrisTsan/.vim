@@ -1,0 +1,14 @@
+snippet fun "a scss mixin" b
+@mixin ${1:name}( ${2:$param}){
+	${3:body}
+}
+$0
+endsnippet
+
+snippet call "call a scss mixin" b
+@include ${1:name}(${2:param});
+endsnippet
+
+snippet inh "extend a css definition" b
+@extend ${1:what-to-extend};
+endsnippet

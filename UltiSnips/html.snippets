@@ -1,0 +1,60 @@
+snippet tag "Description" b
+<${1:div}>
+	${VISUAL}
+</${1/(\w+).*/$1/}>
+endsnippet
+
+#Sourcing anotherFiles
+snippet srcC "sourcing another css" b
+<link rel="stylesheet" type="text/css" href="${1:mystyle}.css">
+endsnippet
+
+snippet srcJ "sourcing another javascript" b
+<script src="${1:myscripts}.js"></script>
+endsnippet
+
+snippet p "insert paragraph" b
+<p id="$1" class="$2">
+	${VISUAL}
+</p>
+endsnippet
+
+snippet div "insert paragraph" b
+<div id="$1" class="$2">
+	${VISUAL}
+</div>
+endsnippet
+
+snippet ul "insert paragraph" b
+<ul>
+	<li>$1</li>
+	$2
+</ul>
+$0
+endsnippet
+
+snippet li "insert paragraph" b
+<li>$1</li>
+$0
+endsnippet
+
+
+snippet prog "html structure" b
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			${1:untitled}
+		</title>
+		$2
+	</head>
+	<body>
+		$3
+	</body>
+</html>
+endsnippet
+
+snippet todo "todo job" 
+<!-- TODO: $1 (`date "+%H:%M:%S // %d-%m-%Y"`)  -->
+endsnippet

@@ -1,0 +1,20 @@
+snippet x<N "for loop" w
+for (int x=0; x<$1; x++) {
+	$2
+}
+$0
+endsnippet
+
+snippet x<= "for loop" w
+for (int x=1; x<$1; x++) {
+	$2
+}
+$0
+endsnippet
+
+snippet N<x<N "for loop" w
+for (int x=$1; x<$2; x++) {
+	$3
+}
+$0
+endsnippet

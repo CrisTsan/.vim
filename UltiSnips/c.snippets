@@ -1,0 +1,56 @@
+snippet prog "A new program" b
+#include <stdio.h>
+$1
+
+int main(int argc, char** argv) {
+	$2
+	return 0;
+}
+endsnippet
+
+#Sourcing anotherFiles
+snippet sif "if structure" b
+if (${1:true})
+	${2:printf("")};
+endsnippet
+
+snippet if "if structure" 
+if (${1:true}){
+	${2:printf("");}
+}
+endsnippet
+
+snippet ife "if structure" 
+if (${1:true}){
+	${2:printf("");}
+} else {
+	${3:printf("");}
+}
+endsnippet
+
+snippet elif "if structure" 
+else if (${1:true}) {
+	${2:printf("");}
+}
+endsnippet
+
+
+snippet el "else"
+else {
+	$1
+}
+endsnippet
+
+snippet wh "while" 
+while(${1:true}){
+	${2:printf("");}
+}
+$0
+endsnippet
+
+snippet for "for" 
+for(${1:int i=0};${2:i<100};${3:i+=1}){
+	${4:printf("");}
+}
+$0
+endsnippet

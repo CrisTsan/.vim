@@ -12,6 +12,11 @@ vnoremap <buffer> <silent> ][ m':exe "normal! gv"|call search('^\s*endf*\%[un
 nnoremap <buffer> <silent> ][ m':call search('^\s*endf*\%[unction]\>', "W")
 vnoremap <buffer> <silent> ]] m':exe "normal! gv"|call search('^\s*fu\%[nction]\>', "W")
 nnoremap <buffer> <silent> ]] m':call search('^\s*fu\%[nction]\>', "W")
+let s:cpo_save=&cpo
+set cpo&vim
+vnoremap <buffer> <F1> !boxes -s 80 -d stonegv2j!boxes -d vim-cmt
+let &cpo=s:cpo_save
+unlet s:cpo_save
 setlocal keymap=
 setlocal noarabic
 setlocal autoindent
@@ -29,7 +34,7 @@ setlocal cinwords=if,else,while,do,for,switch
 setlocal colorcolumn=+1
 setlocal comments=sO:\"\ -,mO:\"\ \ ,eO:\"\",:\"
 setlocal commentstring=\"%s
-setlocal complete=.,w,b,u,t,i
+setlocal complete=.,w,b,u,t
 setlocal concealcursor=
 setlocal conceallevel=0
 setlocal completefunc=
@@ -74,13 +79,13 @@ setlocal keywordprg=
 setlocal nolinebreak
 setlocal nolisp
 setlocal lispwords=
-setlocal list
+setlocal nolist
 setlocal makeprg=
 setlocal matchpairs=(:),{:},[:],<:>,«:»
 setlocal modeline
 setlocal modifiable
-setlocal nrformats=octal,hex
-setlocal nonumber
+setlocal nrformats=bin,hex
+setlocal number
 setlocal numberwidth=4
 setlocal omnifunc=
 setlocal path=
@@ -101,7 +106,7 @@ setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
 setlocal spellfile=
 setlocal spelllang=en
 setlocal statusline=
-setlocal suffixesadd=
+setlocal suffixesadd=.js
 setlocal swapfile
 setlocal synmaxcol=3000
 if &syntax != 'vim'
@@ -116,16 +121,15 @@ setlocal undofile
 setlocal undolevels=-123456
 setlocal nowinfixheight
 setlocal nowinfixwidth
-setlocal wrap
+setlocal nowrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 11) / 23)
+let s:l = 55 - ((3 * winheight(0) + 18) / 37)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
+55
 normal! 0
-lcd ~/
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
 " vim: set ft=vim :

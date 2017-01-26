@@ -16,7 +16,6 @@ setlocal keymap=
 setlocal noarabic
 setlocal autoindent
 setlocal backupcopy=
-setlocal balloonexpr=
 setlocal nobinary
 setlocal nobreakindent
 setlocal breakindentopt=
@@ -30,7 +29,7 @@ setlocal cinwords=if,else,while,do,for,switch
 setlocal colorcolumn=+1
 setlocal comments=sO:\"\ -,mO:\"\ \ ,eO:\"\",:\"
 setlocal commentstring=\"%s
-setlocal complete=.,w,b,u,t,i
+setlocal complete=.,w,b,u,t
 setlocal concealcursor=
 setlocal conceallevel=0
 setlocal completefunc=
@@ -48,6 +47,7 @@ setlocal noexpandtab
 if &filetype != 'vim'
 setlocal filetype=vim
 endif
+setlocal fixendofline
 setlocal foldcolumn=3
 setlocal foldenable
 setlocal foldexpr=0
@@ -59,7 +59,7 @@ setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal foldtext=foldtext()
 setlocal formatexpr=
-setlocal formatoptions=tcq
+setlocal formatoptions=jcroql
 setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
 setlocal grepprg=
 setlocal iminsert=0
@@ -69,17 +69,17 @@ setlocal includeexpr=
 setlocal indentexpr=GetVimIndent()
 setlocal indentkeys=0{,0},:,0#,!^F,o,O,e,=end,=else,=cat,=fina,=END,0\\
 setlocal infercase
-setlocal iskeyword=@,48-57,_,192-255
+setlocal iskeyword=@,48-57,_,192-255,#
 setlocal keywordprg=
 setlocal nolinebreak
 setlocal nolisp
 setlocal lispwords=
-setlocal list
+setlocal nolist
 setlocal makeprg=
 setlocal matchpairs=(:),{:},[:],<:>,«:»
 setlocal modeline
 setlocal modifiable
-setlocal nrformats=octal,hex
+setlocal nrformats=bin,hex
 setlocal number
 setlocal numberwidth=4
 setlocal omnifunc=
@@ -108,6 +108,7 @@ if &syntax != 'vim'
 setlocal syntax=vim
 endif
 setlocal tabstop=4
+setlocal tagcase=
 setlocal tags=
 setlocal textwidth=79
 setlocal thesaurus=
@@ -118,13 +119,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 40 - ((10 * winheight(0) + 18) / 36)
+let s:l = 1 - ((0 * winheight(0) + 22) / 44)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-40
+1
 normal! 0
-lcd ~/
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
 " vim: set ft=vim :

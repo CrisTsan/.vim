@@ -4,8 +4,16 @@ nnoremap <C-P>            :FZF<CR>
 nnoremap <C-O>            o<esc>
 "}}}
 
-nnoremap <Left>           :tabprev<CR>
-nnoremap <Right>          :tabnext<CR>
+" nnoremap <Left>           :tabprev<CR>
+" nnoremap <Right>          :tabnext<CR>
+
+
+" QuickFix "{{{
+nnoremap <Tab>			  :cn<CR>
+nnoremap <S-Tab>		  :cN<CR>
+nnoremap <F9>			  :cope<CR>
+nnoremap <F8>			  :make<CR>
+"}}}
 
 nnoremap <leader>al        :n<CR>
 nnoremap <leader>at        :argadd %<CR>
@@ -43,6 +51,7 @@ nnoremap <Leader>cdc      :cd %:p:h<CR>
 nnoremap <Leader>sgr      :setlocal spell spelllang=el_GR<CR>
 nnoremap <Leader>sen      :setlocal spell spelllang=en<CR>
 nnoremap <Leader>ml       :tabnew ~/Dropbox/Magic\ Lists/buffer.txt<CR>
+nnoremap <Leader>en       :tabnew ~/Dropbox/Magic\ Lists/en.txt<CR>
 "}}}
 
 " . Filetype"{{{
@@ -56,11 +65,10 @@ nnoremap <Leader>.a       :filetype detect<CR>
 " zf Folding Bindings {{{
 nnoremap <Leader>zfs       :set foldmethod=syntax<CR>
 nnoremap <Leader>zfm       :set foldmethod=manual<CR>
-nnoremap <Leader>zfi       :set foldmethod=syntax<CR> 
 nnoremap <Leader>zfi       :set foldmethod=indent<CR>
 nnoremap <Leader>zf{       :set foldmethod=marker<CR>
-nnoremap <Space>           za
-vnoremap <Space>           zf
+" nnoremap <Space>           za
+" vnoremap <Space>           zf
 "}}}
 
 " Tabularize"{{{
@@ -71,8 +79,8 @@ vnoremap <leader>;        :Tab /;/<CR>
 "}}}
 
 " BIG DEAL"{{{
-noremap : ;
-noremap ; :
+" noremap : ;
+" noremap ; :
 "}}}
 
 "onoremap b /return<CR>

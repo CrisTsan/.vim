@@ -4,7 +4,6 @@ setlocal keymap=
 setlocal noarabic
 setlocal autoindent
 setlocal backupcopy=
-setlocal balloonexpr=
 setlocal nobinary
 setlocal nobreakindent
 setlocal breakindentopt=
@@ -36,6 +35,7 @@ setlocal noexpandtab
 if &filetype != 'help'
 setlocal filetype=help
 endif
+setlocal fixendofline
 setlocal foldcolumn=3
 setlocal nofoldenable
 setlocal foldexpr=0
@@ -50,8 +50,8 @@ setlocal formatexpr=
 setlocal formatoptions=jtcroql
 setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
 setlocal grepprg=
-setlocal iminsert=2
-setlocal imsearch=2
+setlocal iminsert=0
+setlocal imsearch=0
 setlocal include=
 setlocal includeexpr=
 setlocal indentexpr=
@@ -67,7 +67,7 @@ setlocal makeprg=
 setlocal matchpairs=(:),{:},[:],<:>,«:»
 setlocal modeline
 setlocal nomodifiable
-setlocal nrformats=hex
+setlocal nrformats=bin,hex
 setlocal nonumber
 setlocal numberwidth=4
 setlocal omnifunc=
@@ -89,13 +89,14 @@ setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
 setlocal spellfile=
 setlocal spelllang=en
 setlocal statusline=
-setlocal suffixesadd=
+setlocal suffixesadd=.js,.ml
 setlocal swapfile
 setlocal synmaxcol=3000
 if &syntax != 'help'
 setlocal syntax=help
 endif
 setlocal tabstop=8
+setlocal tagcase=
 setlocal tags=
 setlocal textwidth=78
 setlocal thesaurus=
@@ -103,16 +104,15 @@ setlocal undofile
 setlocal undolevels=-123456
 setlocal nowinfixheight
 setlocal nowinfixwidth
-setlocal wrap
+setlocal nowrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 1233 - ((12 * winheight(0) + 10) / 20)
+let s:l = 1153 - ((9 * winheight(0) + 10) / 20)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1233
-normal! 046|
-lcd ~/
+1153
+normal! 068|
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
 " vim: set ft=vim :

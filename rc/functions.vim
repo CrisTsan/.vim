@@ -1,5 +1,4 @@
 "relative numbers toogling
-
 function! NumberToggle()
 if(&relativenumber == 1)
 	set norelativenumber

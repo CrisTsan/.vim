@@ -4,7 +4,6 @@ setlocal keymap=
 setlocal noarabic
 setlocal autoindent
 setlocal backupcopy=
-setlocal balloonexpr=
 setlocal nobinary
 setlocal nobreakindent
 setlocal breakindentopt=
@@ -18,7 +17,7 @@ setlocal cinwords=if,else,while,do,for,switch
 setlocal colorcolumn=+1
 setlocal comments=
 setlocal commentstring=
-setlocal complete=.,w,b,u,t,i
+setlocal complete=.,w,b,u,t
 setlocal concealcursor=
 setlocal conceallevel=0
 setlocal completefunc=
@@ -36,7 +35,8 @@ setlocal noexpandtab
 if &filetype != 'netrc'
 setlocal filetype=netrc
 endif
-setlocal foldcolumn=0
+setlocal fixendofline
+setlocal foldcolumn=3
 setlocal foldenable
 setlocal foldexpr=0
 setlocal foldignore=#
@@ -47,7 +47,7 @@ setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal foldtext=foldtext()
 setlocal formatexpr=
-setlocal formatoptions=tcql
+setlocal formatoptions=tcqjl
 setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
 setlocal grepprg=
 setlocal iminsert=0
@@ -56,18 +56,18 @@ setlocal include=
 setlocal includeexpr=
 setlocal indentexpr=
 setlocal indentkeys=0{,0},:,0#,!^F,o,O,e
-setlocal noinfercase
+setlocal infercase
 setlocal iskeyword=@,48-57,_,192-255
 setlocal keywordprg=
 setlocal nolinebreak
 setlocal nolisp
 setlocal lispwords=
-setlocal list
+setlocal nolist
 setlocal makeprg=
-setlocal matchpairs=(:),{:},[:]
+setlocal matchpairs=(:),{:},[:],<:>,«:»
 setlocal modeline
 setlocal modifiable
-setlocal nrformats=octal,hex
+setlocal nrformats=bin,hex
 setlocal number
 setlocal numberwidth=4
 setlocal omnifunc=
@@ -89,29 +89,30 @@ setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
 setlocal spellfile=
 setlocal spelllang=en
 setlocal statusline=
-setlocal suffixesadd=
+setlocal suffixesadd=.js,.ml
 setlocal swapfile
 setlocal synmaxcol=3000
 if &syntax != 'netrc'
 setlocal syntax=netrc
 endif
 setlocal tabstop=4
+setlocal tagcase=
 setlocal tags=
-setlocal textwidth=79
+setlocal textwidth=0
 setlocal thesaurus=
-setlocal noundofile
+setlocal undofile
 setlocal undolevels=-123456
 setlocal nowinfixheight
 setlocal nowinfixwidth
-setlocal wrap
+setlocal nowrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 3 - ((2 * winheight(0) + 11) / 23)
+let s:l = 2 - ((1 * winheight(0) + 13) / 26)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-3
-normal! 018|
+2
+normal! 010|
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
 " vim: set ft=vim :

@@ -272,6 +272,8 @@ nnoremap <Leader>zf{       :set foldmethod=marker<CR>
 "{{{
 call plug#begin('~/.vim/plugged')
 
+Plug 'elixir-lang/vim-elixir'
+Plug 'python-mode/python-mode'
 Plug 'vim-airline/vim-airline'
 Plug 'mileszs/ack.vim'
 Plug 'wellle/targets.vim'
@@ -297,6 +299,10 @@ Plug 'rgrinberg/vim-ocaml'
 Plug 'let-def/ocp-indent-vim'
 Plug 'jonathanfilip/vim-lucius'
 Plug 'altercation/vim-colors-solarized'
+Plug 'lervag/vimtex'
+Plug 'airblade/vim-gitgutter'
+
+
 
 "Plug 'easymotion/vim-easymotion'
 "Plug 'xuhdev/vim-latex-live-preview'
@@ -324,6 +330,12 @@ call gf_ext#add_handler('\.jpeg$', "!o")
 " +-----------------------------------------------------------------------+
 " | " Search Tool                                                         |
 " +-----------------------------------------------------------------------+
+
+if executable('rg')
+  let g:ackprg = 'rg --vimgrep'
+elseif executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
 
 nnoremap <leader>rg :Ack 
 
@@ -467,4 +479,3 @@ let g:airline_symbols.paste = 'Þ'
 let g:airline_symbols.maxlinenr = ''
 let g:airline_symbols.linenr = ''
 let g:airline#extensions#branch#enabled = 1
-

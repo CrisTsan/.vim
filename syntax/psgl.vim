@@ -1,12 +1,14 @@
 " Vim syntax file
 " Language: pseudoglossa
 " Maintainer: Christos Tsanikidis
-" Version: 0.01 Beta
+" Version: 0.02 Beta
 
 if exists("b:current_syntax")
   finish
 endif
+
 syn match vars '([a-zα-ω]\|[A-ZΑ-Ω)\+[a-zα-ω0-9_]*'
+syn match vars '([a-zα-ω]\|[A-ZΑ-Ω)\+[A-Z-Α-Ωa-zα-ω0-9_]*'
 
 " Operators
 syn keyword operators ΚΑΙ Η ΟΧΙ mod div
@@ -14,7 +16,7 @@ syn match operators "+\|*\|/\|-\|<[=]\|>[=]\|<>"
 " Assignment
 syn match assignment "<-"
 " Keywords
-syn keyword basic ΤΕΛΟΣ_ΕΠΑΝΑΛΗΨΗΣ ΟΣΟ ΓΙΑ ΔΙΑΒΑΣΕ ΕΠΑΝΑΛΑΒΕ ΜΕΧΡΙΣ_ΟΤΟΥ ΔΕΔΟΜΕΝΑ ΕΚΤΥΠΩΣΕ ΑΠΟΤΕΛΕΣΜΑΤΑ ΤΕΛΟΣ_ΑΝ ΑΠΟ ΜΕΧΡΙ ΜΕ_ΒΗΜΑ ΑΝΤΙΜΕΤΑΘΕΣΕ ΚΑΘΑΡΙΣΕ ΚΑΛΕΣΕ ΕΜΦΑΝΙΣΕ ΓΡΑΨΕ
+syn keyword basic ΤΕΛΟΣ_ΕΠΑΝΑΛΗΨΗΣ ΟΣΟ ΓΙΑ ΔΙΑΒΑΣΕ ΕΠΑΝΑΛΑΒΕ ΜΕΧΡΙΣ_ΟΤΟΥ ΔΕΔΟΜΕΝΑ ΕΚΤΥΠΩΣΕ ΑΠΟΤΕΛΕΣΜΑΤΑ ΑΝ ΑΛΛΙΩΣ ΑΛΛΙΩΣ_ΑΝ ΤΕΛΟΣ_ΑΝ ΑΠΟ ΜΕΧΡΙ ΜΕ_ΒΗΜΑ ΑΝΤΙΜΕΤΑΘΕΣΕ ΚΑΘΑΡΙΣΕ ΚΑΛΕΣΕ ΕΜΦΑΝΙΣΕ ΓΡΑΨΕ ΤΟΤΕ
 
 " Starting Keyword Followed by Name of Program
 
@@ -28,8 +30,10 @@ syn region strng start='"' end='"'
 " Expression 
 
 syn match maths '\d\+'
-syn match maths '\d\+'
 syn match maths '\d\+\.\d*'
+
+syn match maths '\d\-'
+syn match maths '\d\-\.\d*'
 
 syn match maths '\d[[:digit:]]*[eE][\-+]\=\d\+'
 syn match maths '\d[[:digit:]]*[eE][\-+]\=\d\+'
